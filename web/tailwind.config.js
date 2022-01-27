@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin")
+
 module.exports = {
   purge: {
     content: [
@@ -6,7 +8,17 @@ module.exports = {
     ],
   },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        bgColor: "#5c6b63",
+        primary: "#30C5FF",
+      },
+      fontFamily: {
+        firaSans: ["'Fira Sans', sans-serif"],
+      },
+    },
   },
-  plugins: [],
+  plugins: ["gatsby-plugin-postcss"],
 }
