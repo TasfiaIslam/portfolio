@@ -25,7 +25,7 @@ const Button = ({
   target,
   className = "",
 }: Props): JSX.Element => {
-  let tailWindClass = `${className} text-center relative whitespace-nowrap p-3 font-firaSans tracking-wide`
+  let tailWindClass = `${className} text-center relative whitespace-nowrap px-3 py-2 font-firaSans tracking-wide`
   tailWindClass += ` rounded-md bg-bgColor text-primary border-2 border-primary`
 
   return (
