@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react"
-import { JsxEmit } from "typescript"
 
 interface Props {
   type?: "primary" | "secondary" | "text"
