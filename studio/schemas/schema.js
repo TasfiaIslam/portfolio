@@ -6,6 +6,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import project from "./project";
 import technology from "./technology";
+import hero from "./hero";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,5 +18,6 @@ export default createSchema({
     /* Your types here! */
     project,
     technology,
+    hero,
   ]),
 });

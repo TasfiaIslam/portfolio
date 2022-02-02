@@ -1,3 +1,18 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require("path")
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const gatsbyRequiredRules = path.join(
+  process.cwd(),
+  "node_modules",
+  "gatsby",
+  "dist",
+  "utils",
+  "eslint-rules"
+)
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -10,11 +25,23 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-tsconfig-paths`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        // Gatsby required rules directory
+        rulePaths: [gatsbyRequiredRules],
+        // Default settings that may be ommitted or customized
+        stages: ["develop"],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        exclude: ["node_modules", "bower_components", ".cache", "public"],
       },
     },
     `gatsby-transformer-sharp`,

@@ -3,21 +3,24 @@ import PageSection from "@/components/_root/page-section"
 import Container from "@/components/_root/container"
 import HeaderText from "@/components/_root/text-heading"
 
-const Hero = () => {
+interface Props {
+  title: string
+  sub_header?: string
+  subtitle?: string
+  description?: string
+}
+
+const Hero = ({ title, sub_header, subtitle, description }: Props) => {
   return (
     <PageSection>
       <Container>
         <div>
           <HeaderText size="h3" color="text-primary">
-            Hi,
+            {sub_header}
           </HeaderText>
-          <HeaderText size="h1">I'm Tasfia Islam,</HeaderText>
-          <HeaderText color="text-gray-300">Web Developer</HeaderText>
-          <p className="w-4/5 py-4 text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation.
-          </p>
+          <HeaderText size="h1">{title}</HeaderText>
+          <HeaderText color="text-gray-300">{subtitle}</HeaderText>
+          <p className="w-4/5 py-4 text-gray-400">{description}</p>
         </div>
       </Container>
     </PageSection>
