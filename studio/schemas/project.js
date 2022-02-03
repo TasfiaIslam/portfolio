@@ -17,6 +17,30 @@ export default {
       description: "title of the project",
     },
     {
+      name: "image",
+      title: "Project Image",
+      type: "image",
+      description: "image of the project",
+    },
+    {
+      name: "short_description",
+      title: "Project Description",
+      type: "text",
+      description: "short description of the project",
+    },
+    {
+      name: "git_link",
+      title: "Github Link",
+      type: "url",
+      description: "github link of the project",
+    },
+    {
+      name: "web_link",
+      title: "Project Live Link",
+      type: "url",
+      description: "live link of the project",
+    },
+    {
       name: "techStack",
       title: "Technology Stack",
       type: "array",

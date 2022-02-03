@@ -9,11 +9,12 @@ const weight = {
   h1: "font-bold",
   h2: "font-semibold",
   h3: "font-medium",
+  h4: "font-medium",
 }
 
 export interface Props {
   children: ReactNode
-  size?: "h1" | "h2" | "h3"
+  size?: "h1" | "h2" | "h3" | "h4"
   mode?: "light" | "dark"
   className?: string
   color?: string
@@ -27,7 +28,8 @@ function HeaderText({
   color,
 }: Props): JSX.Element {
   const tailWindClass =
-    `${color || colors[mode]} ${weight[size]}` + `${className ? className : ""}`
+    `${color || colors[mode]} ${weight[size]} ` +
+    `${className ? className : ""}`
 
   switch (size) {
     case "h1":
@@ -36,6 +38,8 @@ function HeaderText({
       return <h2 className={tailWindClass}>{children}</h2>
     case "h3":
       return <h3 className={tailWindClass}> {children} </h3>
+    case "h4":
+      return <h4 className={tailWindClass}> {children} </h4>
     default:
       return <h2 className={tailWindClass}> {children} </h2>
   }
