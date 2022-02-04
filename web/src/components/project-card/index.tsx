@@ -1,6 +1,7 @@
 import React from "react"
 import { IGatsbyImageData } from "gatsby-plugin-image"
-import HeaderText from "../_root/text-heading"
+import HeaderText from "@/components/_root/text-heading"
+import { CardContainer, CardDescription, CardFooter } from "./styled"
 
 interface Props {
   title: string
@@ -8,7 +9,9 @@ interface Props {
   shortDescription?: string
   gitLink?: string
   webLink?: string
-  techStack: string[]
+  techStack: {
+    technology: string
+  }[]
   createDate?: Date
 }
 
@@ -22,17 +25,17 @@ const ProjectCard = ({
   createDate,
 }: Props): JSX.Element => {
   return (
-    <div className="rounded-md shadow-lg bg-gray-400 p-4">
+    <CardContainer>
       <HeaderText size="h4" className="py-3">
         {title}
       </HeaderText>
-      <p className="pb-6">{shortDescription}</p>
-      <div className="flex space-x-4">
-        {techStack.map(technology => (
-          <p>{technology}</p>
+      <CardDescription>{shortDescription}</CardDescription>
+      <CardFooter>
+        {techStack?.map(tech => (
+          <p>{tech.technology}</p>
         ))}
-      </div>
-    </div>
+      </CardFooter>
+    </CardContainer>
   )
 }
 

@@ -12,6 +12,7 @@ module.exports = {
         current: "currentColor",
         bgColor: "#5c6b63",
         primary: "#30C5FF",
+        secondary: "#7c8882",
       },
       fontFamily: {
         firaSans: ["'Fira Sans', sans-serif"],

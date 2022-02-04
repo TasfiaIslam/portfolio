@@ -3,6 +3,7 @@ import Seo from "../components/seo"
 import Header from "@/components/_root/header"
 import Hero from "@/components/hero"
 import { graphql, PageProps } from "gatsby"
+import Projects from "@/components/projects"
 
 const IndexPage = ({ data }: PageProps<any>) => (
   <>
@@ -14,6 +15,7 @@ const IndexPage = ({ data }: PageProps<any>) => (
       subtitle={data?.sanityHero?.subtitle}
       description={data?.sanityHero?.description}
     />
+    <Projects projects={data?.allSanityProject.edges} />
   </>
 )
 
@@ -26,6 +28,17 @@ export const query = graphql`
       sub_header
       subtitle
       description
+    }
+    allSanityProject {
+      edges {
+        node {
+          title
+          short_description
+          techStack {
+            technology
+          }
+        }
+      }
     }
   }
 `
