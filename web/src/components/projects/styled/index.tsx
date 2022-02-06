@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react"
+import React, { ReactNode } from 'react';
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
-export const ProjectContainer = ({ children }: Props) => {
-  return <div>{children}</div>
-}
+export const ProjectContainer = ({ children }: Props): JSX.Element => {
+  return <div className="grid grid-cols-3 gap-4">{children}</div>;
+};

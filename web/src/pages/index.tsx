@@ -1,11 +1,11 @@
-import * as React from "react"
-import Seo from "../components/seo"
-import Header from "@/components/_root/header"
-import Hero from "@/components/hero"
-import { graphql, PageProps } from "gatsby"
-import Projects from "@/components/projects"
+import * as React from 'react';
+import Seo from '../components/seo';
+import Header from '@/components/_root/header';
+import Hero from '@/components/hero';
+import { graphql, PageProps } from 'gatsby';
+import Projects from '@/components/projects';
 
-const IndexPage = ({ data }: PageProps<any>) => (
+const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
   <>
     <Seo title="Home" />
     <Header />
@@ -17,9 +17,9 @@ const IndexPage = ({ data }: PageProps<any>) => (
     />
     <Projects projects={data?.allSanityProject.edges} />
   </>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`
   query {
@@ -41,4 +41,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

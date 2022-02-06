@@ -1,7 +1,7 @@
-import React from "react"
-import Link from "gatsby-link"
-import Button from "@/components/_root/button"
-import { FlexWrapper, HeaderWrapper, LinkWrapper } from "./styled"
+import React from 'react';
+import Link from 'gatsby-link';
+import Button from '@/components/_root/button';
+import { FlexWrapper, HeaderWrapper, LinkWrapper } from './styled';
 
 const Header = (): JSX.Element => {
   return (
@@ -13,11 +13,11 @@ const Header = (): JSX.Element => {
           <Link to="/">Experience</Link>
           <Link to="/">Projects</Link>
           <Link to="/">Contact</Link>
-          <Button children="Resume" />
+          <Button>Resume</Button>
         </LinkWrapper>
       </FlexWrapper>
     </HeaderWrapper>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

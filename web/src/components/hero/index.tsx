@@ -1,16 +1,16 @@
-import React from "react"
-import PageSection from "@/components/_root/page-section"
-import Container from "@/components/_root/container"
-import HeaderText from "@/components/_root/text-heading"
+import React from 'react';
+import PageSection from '@/components/_root/page-section';
+import Container from '@/components/_root/container';
+import HeaderText from '@/components/_root/text-heading';
 
 interface Props {
-  title: string
-  sub_header?: string
-  subtitle?: string
-  description?: string
+  title: string;
+  sub_header?: string;
+  subtitle?: string;
+  description?: string;
 }
 
-const Hero = ({ title, sub_header, subtitle, description }: Props) => {
+const Hero = ({ title, sub_header, subtitle, description }: Props): JSX.Element => {
   return (
     <PageSection>
       <Container>
@@ -24,7 +24,7 @@ const Hero = ({ title, sub_header, subtitle, description }: Props) => {
         </div>
       </Container>
     </PageSection>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

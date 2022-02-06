@@ -7,10 +7,12 @@ export default {
 }
 
 const project = {
-  title: "Test Project",
-  shortDescription:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-  techStack: ["sanity", "gatsby"],
+  node: {
+    title: "Test Project",
+    shortDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+    techStack: [{ technology: "sanity" }, { technology: "gatsby" }],
+  },
 }
 
 const projects = Array(10)

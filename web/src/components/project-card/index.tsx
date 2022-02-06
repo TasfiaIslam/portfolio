@@ -1,18 +1,18 @@
-import React from "react"
-import { IGatsbyImageData } from "gatsby-plugin-image"
-import HeaderText from "@/components/_root/text-heading"
-import { CardContainer, CardDescription, CardFooter } from "./styled"
+import React from 'react';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
+import HeaderText from '@/components/_root/text-heading';
+import { CardContainer, CardDescription, CardFooter } from './styled';
 
 interface Props {
-  title: string
-  image?: string | IGatsbyImageData
-  shortDescription?: string
-  gitLink?: string
-  webLink?: string
+  title: string;
+  image?: string | IGatsbyImageData;
+  shortDescription: string;
+  gitLink?: string;
+  webLink?: string;
   techStack: {
-    technology: string
-  }[]
-  createDate?: Date
+    technology: string;
+  }[];
+  createDate?: Date;
 }
 
 const ProjectCard = ({
@@ -31,12 +31,12 @@ const ProjectCard = ({
       </HeaderText>
       <CardDescription>{shortDescription}</CardDescription>
       <CardFooter>
-        {techStack?.map(tech => (
-          <p>{tech.technology}</p>
+        {techStack?.map((tech, index) => (
+          <p key={index}>{tech.technology}</p>
         ))}
       </CardFooter>
     </CardContainer>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;
