@@ -37,6 +37,13 @@ export const query = graphql`
           techStack {
             technology
           }
+          image {
+            asset {
+              gatsbyImageData
+            }
+          }
+          web_link
+          git_link
         }
       }
     }

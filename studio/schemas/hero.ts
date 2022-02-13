@@ -27,6 +27,21 @@ export default {
       description: "Description about myself",
       type: "string",
     },
+    {
+      name: "profile_links",
+      title: "Profile Links",
+      description: "profile links",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [
+            {
+              type: "profile_links",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
-

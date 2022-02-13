@@ -8,7 +8,7 @@ import { ProjectContainer } from './styled';
 interface Project {
   title: string;
   image?: string | IGatsbyImageData;
-  shortDescription: string;
+  short_description: string;
   gitLink?: string;
   webLink?: string;
   techStack: {
@@ -24,17 +24,23 @@ interface Props {
 }
 
 const Projects = ({ projects }: Props): JSX.Element => {
+  {
+    console.log('projects', projects);
+  }
   return (
     <PageSection>
       <Container>
         <ProjectContainer>
           {projects.map(({ node }, index) => (
-            <ProjectCard
-              key={index}
-              title={node?.title}
-              techStack={node?.techStack}
-              shortDescription={node?.shortDescription}
-            />
+            <>
+              {console.log('description', node.short_description)}
+              <ProjectCard
+                key={index}
+                title={node?.title}
+                techStack={node?.techStack}
+                shortDescription={node?.short_description}
+              />
+            </>
           ))}
         </ProjectContainer>
       </Container>

@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require("path")
-require("dotenv").config({
+const path = require('path');
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 const gatsbyRequiredRules = path.join(
   process.cwd(),
-  "node_modules",
-  "gatsby",
-  "dist",
-  "utils",
-  "eslint-rules"
-)
+  'node_modules',
+  'gatsby',
+  'dist',
+  'utils',
+  'eslint-rules',
+);
 
 module.exports = {
   siteMetadata: {
@@ -27,21 +27,21 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-tsconfig-paths`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: 'img',
+        path: `${__dirname}/src/assets/img`,
       },
     },
     {
-      resolve: "gatsby-plugin-eslint",
+      resolve: 'gatsby-plugin-eslint',
       options: {
         // Gatsby required rules directory
         rulePaths: [gatsbyRequiredRules],
         // Default settings that may be ommitted or customized
-        stages: ["develop"],
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-        exclude: ["node_modules", "bower_components", ".cache", "public"],
+        stages: ['develop'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        exclude: ['node_modules', 'bower_components', '.cache', 'public'],
       },
     },
     `gatsby-transformer-sharp`,
@@ -61,10 +61,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-sanity",
+      resolve: 'gatsby-source-sanity',
       options: {
-        projectId: "mnf85e44",
-        dataset: "production",
+        projectId: 'mnf85e44',
+        dataset: 'production',
         // a token with read permissions is required
         // if you have a private dataset
         token: process.env.MY_SANITY_TOKEN,
@@ -74,4 +74,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
