@@ -5,6 +5,7 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 import ProjectCard from '@/components/project-card';
 import { ProjectContainer } from './styled';
 import HeaderText from '../_root/text-heading';
+import { Description } from '../hero/styled';
 
 interface Project {
   title: string;
@@ -31,9 +32,13 @@ const Projects = ({ projects }: Props): JSX.Element => {
   return (
     <PageSection mode="dark">
       <Container>
-        <HeaderText size="h1" className="pb-8 md:pb-16">
-          Projects I have worked on
+        <HeaderText size="h1" className="pb-8">
+          Projects
         </HeaderText>
+        <Description>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </Description>
         <ProjectContainer>
           {projects.map(({ node }, index) => (
             <>

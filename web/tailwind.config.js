@@ -8,8 +8,7 @@ module.exports = {
         transparent: 'transparent',
         current: 'currentColor',
         bgColor: '#3D3D3D',
-        primary: '#30C5FF',
-        secondary: '#727272',
+        primary: '#60C689',
       },
       fontFamily: {
         firaSans: ["'Fira Sans', sans-serif"],

@@ -34,7 +34,7 @@ const ProjectCard = ({
   return (
     <CardContainer>
       <div className="flex  justify-between">
-        <HeaderText size="h4" className="py-3">
+        <HeaderText size="h4" className="py-3" mode="light">
           {title}
         </HeaderText>
         <ProjectCard.Link gitLink={gitLink} webLink={webLink} />
@@ -44,7 +44,13 @@ const ProjectCard = ({
       <CardDescription>{shortDescription}</CardDescription>
       <CardFooter>
         {techStack?.map((tech, index) => (
-          <p key={index}>{tech.technology}</p>
+          <div
+            key={index}
+            className="flex justify-center items-center rounded-lg 
+            shadow-md bg-gray-200 shadow-green-600 text-gray-600 py-1 cursor-default "
+          >
+            {tech.technology}
+          </div>
         ))}
       </CardFooter>
     </CardContainer>

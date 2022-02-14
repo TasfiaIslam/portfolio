@@ -11,29 +11,29 @@ const Header = (): JSX.Element => {
         <LinkWrapper>
           <Link
             to="/"
-            className="border-b-2 border-transparent hover:border-b-2 hover:border-white cursor-pointer"
+            className="border-b-2 border-transparent hover:border-b-2 hover:border-primary cursor-pointer"
           >
             About
           </Link>
           <Link
             to="/"
-            className="border-b-2 border-transparent hover:border-b-2 hover:border-white cursor-pointer"
+            className="border-b-2 border-transparent hover:border-b-2 hover:border-primary cursor-pointer"
           >
             Experience
           </Link>
           <Link
             to="/"
-            className="border-b-2 border-transparent hover:border-b-2 hover:border-white cursor-pointer"
+            className="border-b-2 border-transparent hover:border-b-2 hover:border-primary cursor-pointer"
           >
             Projects
           </Link>
           <Link
             to="/"
-            className="border-b-2 border-transparent hover:border-b-2 hover:border-white cursor-pointer"
+            className="border-b-2 border-transparent hover:border-b-2 hover:border-primary cursor-pointer"
           >
             Contact
           </Link>
-          <Button>Resume</Button>
+          <Button type="secondary">Resume</Button>
         </LinkWrapper>
       </FlexWrapper>
     </HeaderWrapper>

@@ -1,15 +1,32 @@
 import React, { ReactNode } from 'react';
+import { motion, Variants } from 'framer-motion';
 
 const colors = {
   dark: 'text-gray-200',
-  light: 'text-black',
+  light: 'text-gray-800',
 };
 
-const weight = {
-  h1: 'font-bold',
+const textStyle = {
+  h1: 'font-bold uppercase',
   h2: 'font-semibold',
   h3: 'font-medium',
   h4: 'font-medium',
+};
+
+const textVariants: Variants = {
+  offscreen: {
+    x: -100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
 };
 
 export interface Props {
@@ -28,19 +45,59 @@ function HeaderText({
   color,
 }: Props): JSX.Element {
   const tailWindClass =
-    `${color || colors[mode]} ${weight[size]} ` + `${className ? className : ''}`;
+    `${color || colors[mode]} ${textStyle[size]} ` + `${className ? className : ''}`;
 
   switch (size) {
     case 'h1':
-      return <h1 className={tailWindClass}> {children} </h1>;
+      return (
+        <motion.h1
+          className={tailWindClass}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: false, amount: 0.8 }}
+          variants={textVariants}
+        >
+          {children}
+        </motion.h1>
+      );
     case 'h2':
-      return <h2 className={tailWindClass}>{children}</h2>;
+      return (
+        <motion.h2
+          className={tailWindClass}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: false, amount: 0.8 }}
+          variants={textVariants}
+        >
+          {children}
+        </motion.h2>
+      );
     case 'h3':
-      return <h3 className={tailWindClass}> {children} </h3>;
+      return (
+        <motion.h3
+          className={tailWindClass}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: false, amount: 0.8 }}
+          variants={textVariants}
+        >
+          {children}
+        </motion.h3>
+      );
     case 'h4':
-      return <h4 className={tailWindClass}> {children} </h4>;
+      return <h4 className={tailWindClass}>{children}</h4>;
     default:
-      return <h2 className={tailWindClass}> {children} </h2>;
+      return (
+        <motion.h2
+          className={tailWindClass}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={textVariants}
+        >
+          {children}
+        </motion.h2>
+      );
   }
 }
 

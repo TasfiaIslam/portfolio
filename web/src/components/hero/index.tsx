@@ -4,6 +4,7 @@ import Container from '@/components/_root/container';
 import HeaderText from '@/components/_root/text-heading';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Link from 'gatsby-link';
+import { Description } from './styled';
 
 interface Props {
   title: string;
@@ -25,9 +26,13 @@ const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props
           <HeaderText size="h3" color="text-primary">
             {sub_header}
           </HeaderText>
-          <HeaderText size="h1">{title}</HeaderText>
-          <HeaderText color="text-gray-300">{subtitle}</HeaderText>
-          <p className="w-4/5 py-4 text-gray-400">{description}</p>
+          <HeaderText size="h1" className="pb-8">
+            {title}
+          </HeaderText>
+          <HeaderText size="h3" className="text-gray-300">
+            {subtitle}
+          </HeaderText>
+          <Description>{description}</Description>
           <div className="flex items-center space-x-6 text-white">
             {profile_links?.map((profile, index) => (
               <Link key={index} to={profile?.profile_url || ''}>

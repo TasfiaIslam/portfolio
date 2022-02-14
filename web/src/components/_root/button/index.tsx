@@ -11,10 +11,16 @@ interface Props {
   className?: string;
 }
 
+const hover = {
+  primary: '',
+  secondary: 'hover:bg-primary hover:text-gray-200 hover:font-semibold',
+  text: '',
+};
+
 const buttonChildrenStyle = 'flex items-center justify-center gap-2 whitespace-nowrap';
 
 const Button = ({
-  type,
+  type = 'primary',
   children,
   onClick,
   loading,
@@ -25,6 +31,7 @@ const Button = ({
 }: Props): JSX.Element => {
   let tailWindClass = `${className} text-center relative whitespace-nowrap px-3 py-2 font-firaSans tracking-wide`;
   tailWindClass += ` rounded-md bg-bgColor text-primary border-2 border-primary`;
+  tailWindClass += ` ${hover[type]}`;
 
   return (
     <button className={tailWindClass} onClick={onClick}>
