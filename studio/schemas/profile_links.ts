@@ -15,5 +15,11 @@ export default {
       type: "url",
       description: "social profile link/url",
     },
+    {
+      name: "profile_icon",
+      title: "Profile Icon",
+      type: "image",
+      description: "social profile icon",
+    },
   ],
 };

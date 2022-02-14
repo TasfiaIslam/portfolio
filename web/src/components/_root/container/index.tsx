@@ -5,7 +5,7 @@ interface ContainerProps {
   children: ReactNode | string;
 }
 const Container: React.FC<ContainerProps> = ({ children, className = '' }) => {
-  const containerClass = `px-10 xl:px-auto xl:container ${className} `;
+  const containerClass = `px-10 md:px-16 lg:px-24  ${className} `;
   return <div className={containerClass}>{children}</div>;
 };
 

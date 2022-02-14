@@ -9,7 +9,7 @@ interface Props {
 }
 
 const padding = {
-  small: 'py-16 lg:py-32 ',
+  small: 'py-8 lg:py-16 ',
   large: 'py-20 lg:py-36 ',
 };
 

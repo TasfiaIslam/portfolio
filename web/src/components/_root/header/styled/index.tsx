@@ -1,11 +1,16 @@
 import React, { ReactNode } from 'react';
+import Container from '../../container';
 
 interface Props {
   children: ReactNode;
 }
 
 export const HeaderWrapper = ({ children }: Props): JSX.Element => {
-  return <div className="p-4 bg-bgColor text-gray-200 font-firaSans">{children}</div>;
+  return (
+    <div className="py-8 bg-bgColor text-gray-200 font-firaSans">
+      <Container>{children}</Container>
+    </div>
+  );
 };
 
 export const FlexWrapper = ({ children }: Props): JSX.Element => {
