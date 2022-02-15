@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { motion } from 'framer-motion';
 
 interface Props {
   type?: 'primary' | 'secondary' | 'text';
@@ -34,9 +35,17 @@ const Button = ({
   tailWindClass += ` ${hover[type]}`;
 
   return (
-    <button className={tailWindClass} onClick={onClick}>
+    <motion.button
+      whileHover={{
+        scale: 1.2,
+        transition: { duration: 0.5 },
+      }}
+      whileTap={{ scale: 0.9 }}
+      className={tailWindClass}
+      onClick={onClick}
+    >
       <div className={buttonChildrenStyle}>{loading ? 'loading...' : children}</div>
-    </button>
+    </motion.button>
   );
 };
 
