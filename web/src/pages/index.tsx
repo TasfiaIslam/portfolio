@@ -5,6 +5,7 @@ import Hero from '@/components/hero';
 import { graphql, PageProps } from 'gatsby';
 import Projects from '@/components/projects';
 import Divider from '@/components/_root/divider';
+import Experience from '@/components/experience';
 
 const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
   <>
@@ -17,7 +18,8 @@ const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
       description={data?.sanityHero?.description}
     />
     <Divider />
-    <Projects projects={data?.allSanityProject.edges} />
+    <Experience experiences={data?.allSanityExperience?.edges} />
+    <Projects projects={data?.allSanityProject?.edges} />
   </>
 );
 
@@ -33,6 +35,18 @@ export const query = graphql`
       profile_links {
         profile_name
         profile_url
+      }
+    }
+    allSanityExperience {
+      edges {
+        node {
+          designation
+          company
+          address
+          start_date
+          end_date
+          responsibilities
+        }
       }
     }
     allSanityProject {

@@ -32,7 +32,7 @@ const Projects = ({ projects }: Props): JSX.Element => {
   return (
     <PageSection mode="dark">
       <Container>
-        <HeaderText size="h1" className="pb-8">
+        <HeaderText size="h2" className="pb-8">
           Projects
         </HeaderText>
         <Description>
@@ -48,6 +48,7 @@ const Projects = ({ projects }: Props): JSX.Element => {
                 title={node?.title}
                 techStack={node?.techStack}
                 shortDescription={node?.short_description}
+                image={node?.image}
               />
             </>
           ))}

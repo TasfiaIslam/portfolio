@@ -33,22 +33,17 @@ const ProjectCard = ({
 }: Props): JSX.Element => {
   return (
     <CardContainer>
-      <div className="flex  justify-between">
-        <HeaderText size="h4" className="py-3" mode="light">
-          {title}
-        </HeaderText>
+      <div className="relative">
+        <Image src={image} className="w-full h-64 py-5 rounded-md object-cover" />
         <ProjectCard.Link gitLink={gitLink} webLink={webLink} />
-      </div>{' '}
-      {console.log('Image--->', image)}
-      <Image src={image} className="w-full h-64 py-5 rounded-md object-cover" />
+      </div>
+      <HeaderText size="h4" className="py-3 px-4" mode="light">
+        {title}
+      </HeaderText>
       <CardDescription>{shortDescription}</CardDescription>
       <CardFooter>
         {techStack?.map((tech, index) => (
-          <div
-            key={index}
-            className="flex justify-center items-center rounded-lg 
-            shadow-md bg-gray-200 shadow-green-600 text-gray-600 py-1 cursor-default "
-          >
+          <div key={index} className="flex items-center  text-gray-600 py-1 cursor-default ">
             {tech.technology}
           </div>
         ))}
@@ -59,7 +54,7 @@ const ProjectCard = ({
 
 ProjectCard.Link = ({ gitLink, webLink }: LinkProps): JSX.Element => {
   return (
-    <div className="flex space-x-4 items-center">
+    <div className="flex space-x-4 items-center absolute right-4 top-4">
       {gitLink && (
         <Link to={gitLink} className="h-12 w-12">
           <IconGithub />
