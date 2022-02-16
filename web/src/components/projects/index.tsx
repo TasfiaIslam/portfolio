@@ -26,9 +26,6 @@ interface Props {
 }
 
 const Projects = ({ projects }: Props): JSX.Element => {
-  {
-    console.log('projects', projects);
-  }
   return (
     <PageSection mode="dark">
       <Container>

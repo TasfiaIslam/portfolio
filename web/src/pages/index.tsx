@@ -18,7 +18,7 @@ const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
       description={data?.sanityHero?.description}
     />
     <Divider />
-    <Experience experiences={data?.allSanityExperience?.edges} />
+    <Experience experiences={data?.allSanityExperience?.edges} skills={data?.allSanitySkills?.edges}/>
     <Projects projects={data?.allSanityProject?.edges} />
   </>
 );
@@ -46,6 +46,15 @@ export const query = graphql`
           start_date
           end_date
           responsibilities
+        }
+      }
+    }
+    allSanitySkills {
+      edges {
+        node {
+          topSkills {
+            technology
+          }
         }
       }
     }
