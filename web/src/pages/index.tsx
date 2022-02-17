@@ -16,9 +16,10 @@ const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
       sub_header={data?.sanityHero?.sub_header}
       subtitle={data?.sanityHero?.subtitle}
       description={data?.sanityHero?.description}
+      profile_links={data?.sanityHero?.profile_links}
     />
     <Divider />
-    <Experience experiences={data?.allSanityExperience?.edges} skills={data?.allSanitySkills?.edges}/>
+    <Experience experiences={data?.allSanityExperience?.edges} skills={data?.sanitySkills} />
     <Projects projects={data?.allSanityProject?.edges} />
   </>
 );
@@ -35,6 +36,11 @@ export const query = graphql`
       profile_links {
         profile_name
         profile_url
+        profile_icon {
+          asset {
+            gatsbyImageData(placeholder: DOMINANT_COLOR)
+          }
+        }
       }
     }
     allSanityExperience {
@@ -49,13 +55,9 @@ export const query = graphql`
         }
       }
     }
-    allSanitySkills {
-      edges {
-        node {
-          topSkills {
-            technology
-          }
-        }
+    sanitySkills {
+      topSkills {
+        technology
       }
     }
     allSanityProject {

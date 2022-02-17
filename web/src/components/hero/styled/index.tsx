@@ -17,3 +17,7 @@ export const Description = ({ children }: Props): JSX.Element => {
     </motion.p>
   );
 };
+
+export const ProfileWrapper = ({ children }: Props): JSX.Element => {
+  return <div className="flex items-center space-x-6 text-white pt-8">{children}</div>;
+};

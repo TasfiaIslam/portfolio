@@ -1,10 +1,12 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import PageSection from '@/components/_root/page-section';
 import Container from '@/components/_root/container';
 import HeaderText from '@/components/_root/text-heading';
+import Image from '@/components/_root/image';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Link from 'gatsby-link';
-import { Description } from './styled';
+import { Description, ProfileWrapper } from './styled';
+import Button from '@/components/_root/button';
 
 interface Props {
   title: string;
@@ -14,13 +16,13 @@ interface Props {
   profile_links?: {
     profile_name?: string;
     profile_url?: string;
-    profile_icon?: string | IGatsbyImageData | ReactNode;
+    profile_icon?: string | IGatsbyImageData;
   }[];
 }
 
 const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props): JSX.Element => {
   return (
-    <PageSection>
+    <PageSection id="about">
       <Container>
         <>
           <HeaderText size="h3" color="text-primary">
@@ -33,13 +35,14 @@ const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props
             {subtitle}
           </HeaderText>
           <Description>{description}</Description>
-          <div className="flex items-center space-x-6 text-white">
+          <ProfileWrapper>
+            <Button className="italic">Contact Me</Button>
             {profile_links?.map((profile, index) => (
               <Link key={index} to={profile?.profile_url || ''}>
-                {profile?.profile_icon}
+                <Image src={profile?.profile_icon} className="h-8 w-8" />
               </Link>
             ))}
-          </div>
+          </ProfileWrapper>
         </>
       </Container>
     </PageSection>

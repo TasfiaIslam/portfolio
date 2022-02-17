@@ -1,8 +1,9 @@
 import React from 'react';
-import { IconRightArrow } from '../_icons';
-import Container from '../_root/container';
-import PageSection from '../_root/page-section';
-import HeaderText from '../_root/text-heading';
+import { IconRightArrow } from '@/components/_icons';
+import Container from '@/components/_root/container';
+import PageSection from '@/components/_root/page-section';
+import HeaderText from '@/components/_root/text-heading';
+import Skill from './skill';
 
 interface ExperienceProps {
   designation: string;
@@ -14,7 +15,7 @@ interface ExperienceProps {
   techStack?: { technology: string }[];
 }
 
-interface SkillsProps {
+export interface SkillsProps {
   topSkills?: { technology: string }[];
   others?: { technology: string }[];
 }
@@ -23,16 +24,14 @@ interface Props {
   experiences: {
     node: ExperienceProps;
   }[];
-  skills: {
-    node: SkillsProps;
-  }[];
+  skills: SkillsProps;
 }
 
 const PRIMARY_COLOR = 'rgb(187 247 208)';
 
 const Experience = ({ experiences, skills }: Props): JSX.Element => {
   return (
-    <PageSection>
+    <PageSection id="experience">
       <Container>
         <HeaderText size="h2">Experiences</HeaderText>
         <div className="flex flex-col md:flex-row gap-2">
@@ -67,24 +66,7 @@ const Experience = ({ experiences, skills }: Props): JSX.Element => {
             </div>
           </div>
           <div className="w-2/6 pt-8">
-            <HeaderText size="h4" className="pb-8">
-              Skill Sets
-            </HeaderText>
-            <>
-              {skills?.map(({ node }, skillIndex) => (
-                <div key={skillIndex} className="grid grid-cols-3 xl:grid-cols-5 gap-4">
-                  {node.topSkills?.map((skill, i) => (
-                    <div
-                      key={i}
-                      className="bg-white py-2 flex items-center justify-center text-center"
-                      style={{ borderRadius: '60px' }}
-                    >
-                      {skill.technology}
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </>
+            <Skill skills={skills} />
           </div>
         </div>
       </Container>

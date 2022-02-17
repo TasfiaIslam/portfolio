@@ -6,6 +6,7 @@ interface Props {
   mode?: 'light' | 'dark' | 'gradient';
   className?: string;
   noScrollReveal?: boolean;
+  id?: string;
 }
 
 const padding = {
@@ -25,6 +26,7 @@ const PageSection = ({
   mode = 'dark',
   className = '',
   noScrollReveal = false,
+  id,
 }: Props): JSX.Element => {
   let tailWindClass = `${backgroundColor[mode]}`;
   tailWindClass += `${padding[paddingAmount]} ` + className;
@@ -34,7 +36,13 @@ const PageSection = ({
   }
 
   return (
-    <div data-sal="fade" data-sal-delay="200" data-sal-easing="ease" className={tailWindClass}>
+    <div
+      data-sal="fade"
+      data-sal-delay="200"
+      data-sal-easing="ease"
+      className={tailWindClass}
+      id={id ? id : ''}
+    >
       {children}
     </div>
   );

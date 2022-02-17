@@ -25,7 +25,7 @@ export default {
       name: "description",
       title: "Description",
       description: "Description about myself",
-      type: "string",
+      type: "text",
     },
     {
       name: "profile_links",

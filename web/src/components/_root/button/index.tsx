@@ -13,7 +13,7 @@ interface Props {
 }
 
 const hover = {
-  primary: '',
+  primary: 'hover:bg-primary hover:text-gray-200 hover:font-semibold',
   secondary: 'hover:bg-primary hover:text-gray-200 hover:font-semibold',
   text: '',
 };

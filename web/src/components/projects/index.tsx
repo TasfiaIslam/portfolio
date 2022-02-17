@@ -4,8 +4,8 @@ import Container from '@/components/_root/container';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import ProjectCard from '@/components/project-card';
 import { ProjectContainer } from './styled';
-import HeaderText from '../_root/text-heading';
-import { Description } from '../hero/styled';
+import HeaderText from '@/components/_root/text-heading';
+import { Description } from '@/components/hero/styled';
 
 interface Project {
   title: string;
@@ -27,14 +27,18 @@ interface Props {
 
 const Projects = ({ projects }: Props): JSX.Element => {
   return (
-    <PageSection mode="dark">
+    <PageSection mode="dark" id="project">
       <Container>
         <HeaderText size="h2" className="pb-8">
           Projects
         </HeaderText>
         <Description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.Lorem
+          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.Lorem
+          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
         </Description>
         <ProjectContainer>
           {projects.map(({ node }, index) => (
