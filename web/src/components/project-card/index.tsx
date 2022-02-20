@@ -2,10 +2,9 @@ import React from 'react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import HeaderText from '@/components/_root/text-heading';
 import { CardContainer, CardDescription, CardFooter } from './styled';
-import Image from '../_root/image';
+import Image from '@/components/_root/image';
 import Link from 'gatsby-link';
-import { IconGithub, IconLink } from '../_icons';
-// import PLACEHOLDER from '@/assets/img/placeholder.png';
+import { IconGithub, IconLink } from '@/components/_icons';
 
 interface LinkProps {
   gitLink?: string;
@@ -43,7 +42,7 @@ const ProjectCard = ({
       <CardDescription>{shortDescription}</CardDescription>
       <CardFooter>
         {techStack?.map((tech, index) => (
-          <div key={index} className="flex items-center  text-gray-600 py-1 cursor-default ">
+          <div key={index} className="flex items-center  text-white py-1 cursor-default">
             {tech.technology}
           </div>
         ))}

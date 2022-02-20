@@ -23,7 +23,7 @@ export const FlexWrapper = ({ children }: Props): JSX.Element => {
 };
 
 export const LinkWrapper = ({ children }: Props): JSX.Element => {
-  return <div className="flex items-center space-x-6">{children}</div>;
+  return <div className="hidden lg:flex items-center space-x-6">{children}</div>;
 };
 
 export const LinkItem = ({ children, href }: LinkProps): JSX.Element => {

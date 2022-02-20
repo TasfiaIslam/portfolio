@@ -37,5 +37,5 @@ export const CardDescription = ({ children }: Props): JSX.Element => {
 };
 
 export const CardFooter = ({ children }: Props): JSX.Element => {
-  return <div className="grid grid-cols-3 lg:grid-cols-4 px-4">{children}</div>;
+  return <div className="grid grid-cols-3 lg:grid-cols-4 px-4 pb-4">{children}</div>;
 };

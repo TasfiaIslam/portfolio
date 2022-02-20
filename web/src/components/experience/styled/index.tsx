@@ -1,5 +1,8 @@
 import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
+// import { SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
 
 interface Props {
   children: ReactNode;
@@ -35,10 +38,10 @@ export const SkillItem = ({ children, index }: SkillsProps): JSX.Element => {
   return (
     <motion.div
       className={`bg-white py-2 flex items-center justify-center text-center font-semibold 
-      shadow-md text-blue-700 hover:text-white cursor-pointer border-${getColorIndex(
+      shadow-md text-blue-700 hover:text-white cursor-pointer rounded-full border-${getColorIndex(
         index,
       )} shadow-${getColorIndex(index)} hover:bg-${getColorIndex(index)}`}
-      style={{ borderRadius: '60px' }}
+      // style={{ borderRadius: '60px' }}
       whileHover={{
         scale: 1.1,
         transition: { duration: 0.5 },
@@ -48,4 +51,17 @@ export const SkillItem = ({ children, index }: SkillsProps): JSX.Element => {
       {children}
     </motion.div>
   );
+};
+
+export const ItemWrapper = ({ children }: Props): JSX.Element => {
+  // return <SwiperSlide className="p-8 bg-gray-400 rounded-md">{children}</SwiperSlide>;
+  return <div className="p-8 bg-gray-400 rounded-md">{children}</div>;
+};
+
+export const ItemHeaderWrapper = ({ children }: Props): JSX.Element => {
+  return <div className="flex justify-between items-center">{children}</div>;
+};
+
+export const Company = ({ children }: Props): JSX.Element => {
+  return <p className="pl-6 capitalize italic text-xl text-green-200 font-bold">{children}</p>;
 };
