@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import PageSection from '@/components/_root/page-section';
 import Container from '@/components/_root/container';
 import HeaderText from '@/components/_root/text-heading';
@@ -16,7 +16,7 @@ interface Props {
   profile_links?: {
     profile_name?: string;
     profile_url?: string;
-    profile_icon?: string | IGatsbyImageData;
+    profile_icon?: string | IGatsbyImageData | ReactNode;
   }[];
 }
 

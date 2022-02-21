@@ -29,9 +29,7 @@ const Projects = ({ projects }: Props): JSX.Element => {
   return (
     <PageSection mode="dark" id="project">
       <Container>
-        <HeaderText size="h2" className="pb-8">
-          Projects
-        </HeaderText>
+        <HeaderText size="h2">Projects</HeaderText>
         <Description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.Lorem

@@ -33,20 +33,29 @@ const ProjectCard = ({
   return (
     <CardContainer>
       <div className="relative">
-        <Image src={image} className="w-full h-64 py-5 rounded-md object-cover" />
+        <Image src={image} className="w-full h-48 py-5 object-cover" />
         <ProjectCard.Link gitLink={gitLink} webLink={webLink} />
       </div>
-      <HeaderText size="h4" className="py-3 px-4" mode="light">
-        {title}
-      </HeaderText>
-      <CardDescription>{shortDescription}</CardDescription>
-      <CardFooter>
-        {techStack?.map((tech, index) => (
-          <div key={index} className="flex items-center  text-white py-1 cursor-default">
-            {tech.technology}
-          </div>
-        ))}
-      </CardFooter>
+      <div className="w-full flex flex-col items-start justify-center p-4">
+        <CardFooter>
+          {techStack?.map((tech, index) => (
+            <span
+              key={index}
+              className="text-primary text-xs font-semibold capitalize cursor-default pr-2"
+            >
+              {tech.technology}
+            </span>
+          ))}
+        </CardFooter>
+        <HeaderText size="h4" className="text-white text-xl" mode="dark">
+          {title}
+        </HeaderText>
+        <CardDescription>{shortDescription}</CardDescription>
+        <button className="w-full text-start py-2 text-sm font-semibold bg-primary text-white">
+          View Details
+        </button>
+      </div>
+      <div className="w-full h-1 absolute left-0 bottom-0 bg-primary"></div>
     </CardContainer>
   );
 };

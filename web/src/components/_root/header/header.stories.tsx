@@ -1,9 +1,9 @@
-import React from "react"
-import Header from "."
+import React from 'react';
+import Header from '.';
 
 export default {
-  title: "Root/Header",
+  title: 'Root/Header',
   component: Header,
-}
+};
 
-export const Primary = () => <Header />
+export const HeaderStory = () => <Header />;

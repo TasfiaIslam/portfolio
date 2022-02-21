@@ -11,7 +11,7 @@ export const Description = ({ children }: Props): JSX.Element => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 1 }}
-      className="lg:w-4/5 py-4 text-gray-400"
+      className="lg:w-4/5 pt-8 pb-12 text-gray-200 text-sm"
     >
       {children}
     </motion.p>
@@ -19,5 +19,5 @@ export const Description = ({ children }: Props): JSX.Element => {
 };
 
 export const ProfileWrapper = ({ children }: Props): JSX.Element => {
-  return <div className="flex items-center space-x-6 text-white pt-8">{children}</div>;
+  return <div className="flex items-center space-x-6 text-white py-8">{children}</div>;
 };

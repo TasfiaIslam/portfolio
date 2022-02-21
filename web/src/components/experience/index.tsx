@@ -82,16 +82,16 @@ Experience.Item = ({ index, node }: ItemProps): JSX.Element => {
         <HeaderText size="h4" className="capitalize">
           {index + 1}. {node?.designation}
         </HeaderText>
-        <p className="italic text-md text-white">
+        <p className="text-xs text-white">
           {node?.start_date} - {node?.end_date ? node?.end_date : 'present'}
         </p>
       </ItemHeaderWrapper>
       <Company>{node?.company}</Company>
       <div className="pl-1 lg:pl-6 pt-2 flex flex-col gap-1">
         {node.responsibilities?.map((res, resIndex) => (
-          <div key={resIndex} className="flex gap-1 text-gray-200">
-            <IconRightArrow color={PRIMARY_COLOR} />
-            {res}
+          <div key={resIndex} className="flex gap-2 text-gray-200 text-sm">
+            <IconRightArrow color={PRIMARY_COLOR} size={'18'} />
+            {res}'
           </div>
         ))}
       </div>
