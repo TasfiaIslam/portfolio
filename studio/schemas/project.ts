@@ -17,6 +17,12 @@ export default {
       description: "title of the project",
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      description: "project slug",
+    },
+    {
       name: "image",
       title: "Project Image",
       type: "image",

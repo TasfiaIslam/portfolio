@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Seo from '../components/seo';
+import Seo from '@/components/seo';
 import Header from '@/components/_root/header';
 import Hero from '@/components/hero';
 import { graphql, PageProps } from 'gatsby';
