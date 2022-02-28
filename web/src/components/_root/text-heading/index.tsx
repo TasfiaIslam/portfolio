@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { motion, Variants } from 'framer-motion';
 
 const colors = {
-  dark: 'text-gray-200',
+  dark: 'text-slate-200',
   light: 'text-gray-800',
 };
 
@@ -15,11 +15,9 @@ const textStyle = {
 
 const textVariants: Variants = {
   offscreen: {
-    x: -100,
     opacity: 0,
   },
   onscreen: {
-    x: 0,
     opacity: 1,
     transition: {
       type: 'spring',

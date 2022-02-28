@@ -6,7 +6,7 @@ import HeaderText from '@/components/_root/text-heading';
 import Skill from './skill';
 import { Company, ItemHeaderWrapper, ItemWrapper } from './styled';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, EffectCards } from 'swiper';
+import { Pagination, EffectCards, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -51,10 +51,14 @@ const Experience = ({ experiences, skills }: Props): JSX.Element => {
             </HeaderText>
             <div className="lg:w-11/12 xl:w-9/12">
               <Swiper
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
                 pagination={{
                   dynamicBullets: true,
                 }}
-                modules={[Pagination, EffectCards]}
+                modules={[Pagination, EffectCards, Autoplay]}
                 spaceBetween={10}
                 grabCursor={true}
               >
@@ -88,10 +92,11 @@ Experience.Item = ({ index, node }: ItemProps): JSX.Element => {
       </ItemHeaderWrapper>
       <Company>{node?.company}</Company>
       <div className="pl-1 lg:pl-6 pt-2 flex flex-col gap-1">
+        <p className="text-slate-200 py-4">Responsibilites</p>
         {node.responsibilities?.map((res, resIndex) => (
           <div key={resIndex} className="flex gap-2 text-gray-200 text-sm">
             <IconRightArrow color={PRIMARY_COLOR} size={'18'} />
-            {res}'
+            {res}
           </div>
         ))}
       </div>

@@ -20,6 +20,7 @@ const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
     />
     <Divider />
     <Experience experiences={data?.allSanityExperience?.edges} skills={data?.sanitySkills} />
+    <Divider />
     <Projects projects={data?.allSanityProject?.edges} />
   </>
 );

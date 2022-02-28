@@ -12,35 +12,37 @@ interface SkillsProps extends Props {
   index: number;
 }
 
-const COLORS = ['purple-400', 'yellow-400', 'orange-400', 'blue-400'];
+// const COLORS = ['purple-400', 'yellow-400', 'orange-400', 'blue-400'];
 
-const getColorIndex = (i: number): string => {
-  if (i % 4 === 0) {
-    return COLORS[0];
-  }
-  if (i % 4 === 1) {
-    return COLORS[1];
-  }
-  if (i % 4 === 2) {
-    return COLORS[2];
-  }
-  if (i % 4 === 3) {
-    return COLORS[3];
-  }
-  return COLORS[0];
-};
+// const getColorIndex = (i: number): string => {
+//   if (i % 4 === 0) {
+//     return COLORS[0];
+//   }
+//   if (i % 4 === 1) {
+//     return COLORS[1];
+//   }
+//   if (i % 4 === 2) {
+//     return COLORS[2];
+//   }
+//   if (i % 4 === 3) {
+//     return COLORS[3];
+//   }
+//   return COLORS[0];
+// };
 
 export const SkillWrapper = ({ children }: Props): JSX.Element => {
   return <div className="grid grid-cols-3 gap-4">{children}</div>;
 };
 
+// border-${getColorIndex(
+//         index,
+//       )} shadow-${getColorIndex(index)} hover:bg-${getColorIndex(index)}
+
 export const SkillItem = ({ children, index }: SkillsProps): JSX.Element => {
   return (
     <motion.div
       className={`bg-primary px-3 py-2 flex items-center justify-center text-center font-semibold 
-      shadow-md text-white hover:text-white cursor-pointer border-${getColorIndex(
-        index,
-      )} shadow-${getColorIndex(index)} hover:bg-${getColorIndex(index)}`}
+      shadow-md text-white hover:bg-slate-200 hover:text-slate-600 cursor-pointer `}
       // style={{ borderRadius: '60px' }}
       whileHover={{
         scale: 1.1,
