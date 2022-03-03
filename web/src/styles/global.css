@@ -25,3 +25,12 @@ h3 {
 h4 {
   font-size: 24px;
 }
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  a.nimation-delay-4000 {
+    animation-delay: 4s;
+  }
+}

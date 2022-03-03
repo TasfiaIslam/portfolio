@@ -24,26 +24,36 @@ const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props
   return (
     <PageSection id="about">
       <Container>
-        <>
-          <HeaderText size="h3" color="text-primary-blue">
-            {sub_header}
-          </HeaderText>
-          <HeaderText size="h1" className="pb-8">
-            {title}
-          </HeaderText>
-          <HeaderText size="h3" className="text-text-dark-version">
-            {subtitle}
-          </HeaderText>
-          <Description>{description}</Description>
-          <ProfileWrapper>
-            <Button className="italic">Contact Me</Button>
-            {profile_links?.map((profile, index) => (
-              <Link key={index} to={profile?.profile_url || ''}>
-                <Image src={profile?.profile_icon} className="h-8 w-8" />
-              </Link>
-            ))}
-          </ProfileWrapper>
-        </>
+        <div className="flex">
+          <div className="w-2/3">
+            <HeaderText size="h3" color="text-primary-blue">
+              {sub_header}
+            </HeaderText>
+            <HeaderText size="h1" className="pb-8">
+              {title}
+            </HeaderText>
+            <HeaderText size="h3" className="text-text-dark-version">
+              {subtitle}
+            </HeaderText>
+            <Description>{description}</Description>
+            <ProfileWrapper>
+              <Button className="italic">Contact Me</Button>
+              {profile_links?.map((profile, index) => (
+                <Link key={index} to={profile?.profile_url || ''}>
+                  <Image src={profile?.profile_icon} className="h-8 w-8" />
+                </Link>
+              ))}
+            </ProfileWrapper>
+          </div>
+          <div className="w-1/3 relative">
+            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob absolute top-40 left-4"></div>
+            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-2000 absolute top-52 right-8"></div>
+            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-4000 absolute bottom-32 left-36"></div>
+            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-4000 absolute top-64 left-16"></div>
+            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-4000 absolute top-12 left-44"></div>
+            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-4000 absolute top-48 left-52"></div>
+          </div>
+        </div>
       </Container>
     </PageSection>
   );
