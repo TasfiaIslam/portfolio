@@ -13,8 +13,8 @@ interface Props {
 }
 
 const hover = {
-  primary: 'hover:bg-primary hover:text-gray-200 hover:font-semibold',
-  secondary: 'hover:bg-primary hover:text-gray-200 hover:font-semibold',
+  primary: 'hover:bg-primary-blue hover:text-text-dark-version hover:font-semibold',
+  secondary: 'hover:bg-primary-blue hover:text-text-dark-version hover:font-semibold',
   text: '',
 };
 
@@ -31,13 +31,13 @@ const Button = ({
   className = '',
 }: Props): JSX.Element => {
   let tailWindClass = `${className} text-center relative whitespace-nowrap px-3 py-2 font-firaSans tracking-wide`;
-  tailWindClass += ` rounded-md bg-bgColor text-primary border-2 border-primary`;
+  tailWindClass += ` rounded-md bg-secondary text-primary-blue border-2 border-primary-blue`;
   tailWindClass += ` ${hover[type]}`;
 
   return (
     <motion.button
       whileHover={{
-        scale: 1.2,
+        scale: 1.09,
         transition: { duration: 0.5 },
       }}
       whileTap={{ scale: 0.9 }}

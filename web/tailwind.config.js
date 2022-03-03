@@ -2,28 +2,24 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
-  safelist: [
-    'border-purple-400',
-    'border-blue-400',
-    'border-orange-400',
-    'border-yellow-400',
-    'shadow-purple-400',
-    'shadow-blue-400',
-    'shadow-orange-400',
-    'shadow-yellow-400',
-    'hover:bg-purple-400',
-    'hover:bg-blue-400',
-    'hover:bg-orange-400',
-    'hover:bg-yellow-400',
-  ],
+  safelist: [],
   theme: {
     extend: {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        bgColor: '#3D3D3D',
-        primary: '#60C689',
+        primary: '#4895EF',
         'primary-light': 'rgb(187 247 208)',
+        'primary-blue': '#4895EF',
+        'secondary-blue': '#F0F8FF',
+        'primary-text': '#CDD2D8',
+        'secondary-text': '#4D515C',
+        'text-light-version': '#56697D',
+        'text-dark-version': '#CDD2D8',
+        'primary-dark': '#041F3C',
+        'secondary-dark': '#0E2946',
+        'light-button': '#E9EDF4',
+        'border-primary': '#182F49',
       },
       fontFamily: {
         firaSans: ["'Fira Sans', sans-serif"],

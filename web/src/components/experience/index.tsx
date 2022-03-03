@@ -37,7 +37,7 @@ interface Props {
   skills: SkillsProps;
 }
 
-const PRIMARY_COLOR = 'rgb(187 247 208)';
+const PRIMARY_COLOR = '#4895EF';
 
 const Experience = ({ experiences, skills }: Props): JSX.Element => {
   return (

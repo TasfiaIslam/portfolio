@@ -16,7 +16,7 @@ const padding = {
 
 const backgroundColor = {
   light: 'bg-transparent ',
-  dark: 'bg-bgColor ',
+  dark: 'bg-primary-dark ',
   gradient: 'bg-gradient-to-r from-primary to-secondary ',
 };
 

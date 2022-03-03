@@ -12,7 +12,7 @@ interface LinkProps extends Props {
 
 export const HeaderWrapper = ({ children }: Props): JSX.Element => {
   return (
-    <div className="py-8 bg-bgColor text-gray-200 font-firaSans">
+    <div className="py-8 bg-secondary-dark text-text-dark-version font-firaSans">
       <Container>{children}</Container>
     </div>
   );
@@ -30,7 +30,7 @@ export const LinkItem = ({ children, href }: LinkProps): JSX.Element => {
   return (
     <AnchorLink
       to={href ? href : '/'}
-      className="border-b-2 border-transparent hover:border-b-2 hover:border-primary cursor-pointer transition 
+      className="border-b-2 border-transparent hover:border-b-2 hover:border-primary-blue cursor-pointer transition 
       ease-out delay-100 hover:-translate-y-1 duration-300 hover:transition-all"
     >
       {children}

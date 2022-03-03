@@ -25,13 +25,13 @@ const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props
     <PageSection id="about">
       <Container>
         <>
-          <HeaderText size="h3" color="text-primary">
+          <HeaderText size="h3" color="text-primary-blue">
             {sub_header}
           </HeaderText>
           <HeaderText size="h1" className="pb-8">
             {title}
           </HeaderText>
-          <HeaderText size="h3" className="text-gray-300">
+          <HeaderText size="h3" className="text-text-dark-version">
             {subtitle}
           </HeaderText>
           <Description>{description}</Description>
