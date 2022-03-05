@@ -5,7 +5,7 @@ import HeaderText from '@/components/_root/text-heading';
 import Image from '@/components/_root/image';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Link from 'gatsby-link';
-import { Description, ProfileWrapper } from './styled';
+import { AnimationDiv, Description, ProfileWrapper } from './styled';
 import Button from '@/components/_root/button';
 
 interface Props {
@@ -46,12 +46,12 @@ const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props
             </ProfileWrapper>
           </div>
           <div className="w-1/3 relative">
-            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob absolute top-40 left-4"></div>
-            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-2000 absolute top-52 right-8"></div>
-            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-4000 absolute bottom-32 left-36"></div>
-            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-4000 absolute top-64 left-16"></div>
-            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-4000 absolute top-12 left-44"></div>
-            <div className="bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob animation-delay-4000 absolute top-48 left-52"></div>
+            <AnimationDiv className="absolute top-40 left-4"></AnimationDiv>
+            <AnimationDiv className="animation-delay-2000 absolute top-52 right-8"></AnimationDiv>
+            <AnimationDiv className="animation-delay-4000 absolute bottom-32 left-36"></AnimationDiv>
+            <AnimationDiv className="animation-delay-2000 absolute top-64 left-16"></AnimationDiv>
+            <AnimationDiv className="animation-delay-4000 absolute top-12 left-44"></AnimationDiv>
+            <AnimationDiv className="animation-delay-4000 absolute top-48 left-52"></AnimationDiv>
           </div>
         </div>
       </Container>
