@@ -12,7 +12,9 @@ const Header = (): JSX.Element => {
           <LinkItem href="/#experience">Experience</LinkItem>
           <LinkItem href="/#project">Projects</LinkItem>
           <LinkItem href="/#contact">Contact</LinkItem>
-          <Button type="secondary">Resume</Button>
+          <Button href={`/tasfia-islam-resume.pdf`} target="_blank">
+            Resume
+          </Button>
         </LinkWrapper>
       </FlexWrapper>
     </HeaderWrapper>

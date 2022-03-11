@@ -34,6 +34,14 @@ const Button = ({
   tailWindClass += ` rounded-md bg-secondary text-primary-blue border-2 border-primary-blue`;
   tailWindClass += ` ${hover[type]}`;
 
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className={tailWindClass}>
+        {loading ? 'loading...' : children}
+      </a>
+    );
+  }
+
   return (
     <motion.button
       whileHover={{
