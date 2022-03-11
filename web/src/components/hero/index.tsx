@@ -7,6 +7,7 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Link from 'gatsby-link';
 import { AnimationDiv, Description, ProfileWrapper } from './styled';
 import Button from '@/components/_root/button';
+import Typical from 'react-typical';
 
 interface Props {
   title: string;
@@ -32,9 +33,12 @@ const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props
             <HeaderText size="h1" className="pb-8">
               {title}
             </HeaderText>
-            <HeaderText size="h3" className="text-text-dark-version">
-              {subtitle}
-            </HeaderText>
+            <Typical
+              steps={[`${subtitle}`, 1000, 'React Developer', 1000, 'Frontend Enthusiast', 1000]}
+              wrapper="p"
+              loop={Infinity}
+              className="text-2xl text-text-dark-version font-semibold"
+            />
             <Description>{description}</Description>
             <ProfileWrapper>
               <Button className="italic">Contact Me</Button>
