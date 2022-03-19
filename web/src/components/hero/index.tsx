@@ -30,7 +30,7 @@ const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props
             <HeaderText size="h3" color="text-primary-blue">
               {sub_header}
             </HeaderText>
-            <HeaderText size="h1" className="pb-8">
+            <HeaderText size="h1" className="pb-8 font-playfairDisplay">
               {title}
             </HeaderText>
             <Typical

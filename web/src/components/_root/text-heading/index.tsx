@@ -43,7 +43,8 @@ function HeaderText({
   color,
 }: Props): JSX.Element {
   const tailWindClass =
-    `${color || colors[mode]} ${textStyle[size]} ` + `${className ? className : ''}`;
+    `font-playfairDisplay ${color || colors[mode]} ${textStyle[size]} ` +
+    `${className ? className : ''}`;
 
   switch (size) {
     case 'h1':

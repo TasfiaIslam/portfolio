@@ -23,6 +23,7 @@ module.exports = {
       },
       fontFamily: {
         firaSans: ["'Fira Sans', sans-serif"],
+        playfairDisplay: ["'Playfair Display', serif"],
       },
       animation: {
         blob: 'blob 4s infinite',
