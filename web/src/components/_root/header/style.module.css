@@ -1,0 +1,6 @@
+.mask {
+  @apply font-playfairDisplay text-4xl font-semibold;
+  mask-image: linear-gradient(rgb(57, 37, 168), transparent);
+  /* mask-image: url(pattern.jpeg); */
+  mask-repeat: no-repeat;
+}

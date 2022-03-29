@@ -1,12 +1,13 @@
 import React from 'react';
 import Button from '@/components/_root/button';
 import { FlexWrapper, HeaderWrapper, LinkItem, LinkWrapper } from './styled';
+import * as styles from './style.module.css';
 
 const Header = (): JSX.Element => {
   return (
     <HeaderWrapper>
       <FlexWrapper>
-        <div>Logo</div>
+        <div className={styles.mask}>T</div>
         <LinkWrapper>
           <LinkItem href="/#about">About</LinkItem>
           <LinkItem href="/#experience">Experience</LinkItem>
