@@ -21,21 +21,21 @@ const Project = ({ data }: PageProps<any>): JSX.Element => (
 
 export default Project;
 
-export const query = graphql`
-  query sanityProjectQuery($id: String!) {
-    sanityProject(id: { eq: $id }) {
-      title
-      short_description
-      techStack {
-        technology
-      }
-      image {
-        asset {
-          gatsbyImageData
-        }
-      }
-      web_link
-      git_link
-    }
-  }
-`;
+// export const query = graphql`
+//   query sanityProjectQuery($id: String!) {
+//     sanityProject(id: { eq: $id }) {
+//       title
+//       short_description
+//       techStack {
+//         technology
+//       }
+//       image {
+//         asset {
+//           gatsbyImageData
+//         }
+//       }
+//       web_link
+//       git_link
+//     }
+//   }
+// `;
