@@ -1,7 +1,7 @@
 import React from 'react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import HeaderText from '@/components/_root/text-heading';
-import { CardContainer, CardDescription, CardFooter } from './styled';
+import { CardContainer, CardDescription, TechStackWrapper } from './styled';
 import Image from '@/components/_root/image';
 import Link from 'gatsby-link';
 import { IconGithub, IconLink } from '@/components/_icons';
@@ -19,6 +19,9 @@ interface Props extends LinkProps {
     technology: string;
   }[];
   createDate?: Date;
+  slug: {
+    current: string;
+  };
 }
 
 const ProjectCard = ({
@@ -29,15 +32,23 @@ const ProjectCard = ({
   webLink,
   techStack,
   createDate,
+  slug,
 }: Props): JSX.Element => {
+  {
+    console.log('SLUG', slug?.current);
+  }
   return (
     <CardContainer>
-      <div className="relative">
-        <Image src={image} className="w-full h-48 py-5 object-cover" />
+      <div className="relative z-10">
+        <Image
+          src={image}
+          className="w-full h-48 py-5 relative z-10 opacity-75 group-hover:opacity-90 cursor-pointer"
+          objectFit="cover"
+        />
         <ProjectCard.Link gitLink={gitLink} webLink={webLink} />
       </div>
       <div className="w-full flex flex-col items-start justify-center p-4">
-        <CardFooter>
+        <TechStackWrapper>
           {techStack?.map((tech, index) => (
             <span
               key={index}
@@ -46,14 +57,19 @@ const ProjectCard = ({
               {tech.technology}
             </span>
           ))}
-        </CardFooter>
-        <HeaderText size="h4" className="text-white text-xl" mode="dark">
+        </TechStackWrapper>
+        <HeaderText size="h4" className="text-white text-xl group-hover:text-slate-400" mode="dark">
           {title}
         </HeaderText>
-        <CardDescription>{shortDescription}</CardDescription>
-        <button className="w-full text-start py-2 text-sm font-semibold bg-primary text-white">
-          View Details
-        </button>
+        <CardDescription shortDescription={shortDescription} />
+        <Link to={`project/${slug?.current}/`} className="w-full">
+          <button
+            className="w-full text-start mt-4 py-2 text-sm font-semibold bg-primary text-white 
+        group-hover:bg-secondary-blue group-hover:text-primary cursor-pointer transition duration-300 ease-out"
+          >
+            View Details
+          </button>
+        </Link>
       </div>
       <div className="w-full h-1 absolute left-0 bottom-0 bg-primary"></div>
     </CardContainer>
@@ -62,14 +78,14 @@ const ProjectCard = ({
 
 ProjectCard.Link = ({ gitLink, webLink }: LinkProps): JSX.Element => {
   return (
-    <div className="flex space-x-4 items-center absolute right-4 top-4">
-      {gitLink && (
-        <Link to={gitLink} className="h-12 w-12">
-          <IconGithub />
+    <div className="flex gap-2 items-center absolute z-20 right-2 top-2">
+      {!!gitLink && (
+        <Link to={gitLink} className="h-6 w-6 flex items-center">
+          <IconGithub color="blue" />
         </Link>
       )}
-      {webLink && (
-        <Link to={webLink} className="h-12 w-12">
+      {!!webLink && (
+        <Link to={webLink} className="h-6 w-6 flex items-center">
           <IconLink />
         </Link>
       )}

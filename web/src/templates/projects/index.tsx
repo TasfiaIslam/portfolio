@@ -13,29 +13,36 @@ const Project = ({ data }: PageProps<any>): JSX.Element => (
     <ProjectCard
       title={data?.sanityProject?.title}
       image={data?.sanityProject?.image}
+      webLink={data?.sanityProject?.web_link}
+      gitLink={data?.sanityProject?.git_link}
       shortDescription={data?.sanityProject?.shortDescription}
       techStack={data?.sanityProject?.techStack}
+      slug={data?.sanityProject?.slug}
     />
   </>
 );
 
 export default Project;
 
-// export const query = graphql`
-//   query sanityProjectQuery($id: String!) {
-//     sanityProject(id: { eq: $id }) {
-//       title
-//       short_description
-//       techStack {
-//         technology
-//       }
-//       image {
-//         asset {
-//           gatsbyImageData
-//         }
-//       }
-//       web_link
-//       git_link
-//     }
-//   }
-// `;
+export const query = graphql`
+  query sanityProjectQuery($id: String!) {
+    sanityProject(id: { eq: $id }) {
+      id
+      title
+      short_description
+      techStack {
+        technology
+      }
+      image {
+        asset {
+          gatsbyImageData
+        }
+      }
+      web_link
+      git_link
+      slug {
+        current
+      }
+    }
+  }
+`;

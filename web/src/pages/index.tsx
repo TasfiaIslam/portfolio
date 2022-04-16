@@ -64,6 +64,7 @@ export const query = graphql`
     allSanityProject {
       edges {
         node {
+          id
           title
           short_description
           techStack {

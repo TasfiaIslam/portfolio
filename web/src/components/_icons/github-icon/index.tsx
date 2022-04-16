@@ -5,10 +5,10 @@ interface Props {
   size?: string;
 }
 
-const IconGithub = ({ color = 'currentColor', size = '30px' }: Props): JSX.Element => {
+const IconGithub = ({ color = 'currentColor', size = '30' }: Props): JSX.Element => {
   return (
     <svg
-      fill="#000000"
+      fill={'#000000'}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
       width={size}

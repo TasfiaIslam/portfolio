@@ -11,12 +11,15 @@ interface Project {
   title: string;
   image?: string | IGatsbyImageData;
   short_description: string;
-  gitLink?: string;
-  webLink?: string;
+  git_link?: string;
+  web_link?: string;
   techStack: {
     technology: string;
   }[];
   createDate?: Date;
+  slug: {
+    current: string;
+  };
 }
 
 interface Props {
@@ -41,12 +44,16 @@ const Projects = ({ projects }: Props): JSX.Element => {
         <ProjectContainer>
           {projects.map(({ node }, index) => (
             <>
+              {console.log('PROJECT DATA', node)}
               <ProjectCard
                 key={index}
                 title={node?.title}
+                gitLink={node?.git_link}
+                webLink={node?.web_link}
                 techStack={node?.techStack}
                 shortDescription={node?.short_description}
                 image={node?.image}
+                slug={node?.slug}
               />
             </>
           ))}
