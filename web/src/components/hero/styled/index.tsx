@@ -15,7 +15,7 @@ export const Description = ({ children }: Props): JSX.Element => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 1 }}
-      className="lg:w-4/5 pt-8 pb-12 text-gray-200 text-sm"
+      className="lg:w-3/5 pt-8 pb-12 text-gray-200 text-sm"
     >
       {children}
     </motion.p>

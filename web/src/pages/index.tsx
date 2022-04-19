@@ -9,7 +9,7 @@ import Experience from '@/components/experience';
 
 const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
   <>
-    <Seo title="Home" />
+    <Seo title="Tasfia Islam" />
     <Header />
     <Hero
       title={data?.sanityHero?.title}

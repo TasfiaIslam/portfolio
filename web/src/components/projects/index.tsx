@@ -34,12 +34,9 @@ const Projects = ({ projects }: Props): JSX.Element => {
       <Container>
         <HeaderText size="h2">Projects</HeaderText>
         <Description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          Here are some projects among many that I have been working on while working for companies
+          and also some personal projects I love to work on during my leisure time. These are only
+          few among other projects I have been working on.
         </Description>
         <ProjectContainer>
           {projects.map(({ node }, index) => (
