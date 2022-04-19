@@ -6,12 +6,11 @@
  */
 
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import Header from '../_root/header';
+import { motion } from 'framer-motion';
 // import { useStaticQuery, graphql } from 'gatsby';
 
-// import Header from "./header"
-
-const Layout = ({ children }) => {
+const Layout = ({ children }: any): JSX.Element => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -24,7 +23,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
+      <Header />
       <div
         style={{
           margin: `0 auto`,
@@ -32,23 +31,19 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <main className={'mt-[64px] overflow-hidden'}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, type: 'tween' }}
+          >
+            {children}
+          </motion.div>
+        </main>
       </div>
     </>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

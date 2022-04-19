@@ -64,6 +64,9 @@ export const query = graphql`
     allSanityProject {
       edges {
         node {
+          slug {
+            current
+          }
           id
           title
           short_description
@@ -77,6 +80,7 @@ export const query = graphql`
           }
           web_link
           git_link
+          _rawContent
         }
       }
     }

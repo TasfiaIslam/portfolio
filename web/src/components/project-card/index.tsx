@@ -34,9 +34,9 @@ const ProjectCard = ({
   createDate,
   slug,
 }: Props): JSX.Element => {
-  {
-    console.log('SLUG', slug?.current);
-  }
+  // {
+  //   console.log('SLUG', slug?.current);
+  // }
   return (
     <CardContainer>
       <div className="relative z-10">

@@ -31,7 +31,7 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `);
 
-  const projectTemplate = path.resolve(`src/templates/projects/index.tsx`);
+  const projectTemplate = path.resolve(`src/templates/project/index.tsx`);
 
   result.data.allSanityProject.edges.forEach(({ node }) => {
     const projectPath = `project/${node.slug.current}`;

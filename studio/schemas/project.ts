@@ -40,6 +40,13 @@ export default {
       type: "text",
       description: "short description of the project",
     },
+
+    {
+      name: "content",
+      title: "Project Content",
+      description: "long description/details of the project",
+      type: "blockContent",
+    },
     {
       name: "git_link",
       title: "Github Link",

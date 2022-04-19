@@ -1,0 +1,33 @@
+@tailwind components;
+
+@layer components {
+  .content {
+    @apply pt-5 mb-5 pb-5 lg:pt-16 lg:mb-14 lg:pb-14;
+  }
+
+  .content img {
+    @apply w-full h-52 lg:h-72 pt-5 lg:pt-8 object-cover;
+  }
+
+  .content p,
+  ul {
+    @apply text-text-light-version;
+  }
+
+  .content p {
+    @apply pt-5;
+  }
+
+  .content blockquote {
+    @apply italic text-text-light-version bg-[#F0F8FF] p-5 mt-5 border-l-4 border-blue-500;
+  }
+
+  .content h4,
+  .content h5 {
+    @apply pt-5 lg:pt-16 uppercase font-semibold text-secondary-dark font-firaSans text-2xl lg:text-3xl;
+  }
+
+  .content ul {
+    @apply py-5 list-disc pl-8 text-text-light-version;
+  }
+}

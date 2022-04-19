@@ -44,7 +44,6 @@ const Projects = ({ projects }: Props): JSX.Element => {
         <ProjectContainer>
           {projects.map(({ node }, index) => (
             <>
-              {console.log('PROJECT DATA', node)}
               <ProjectCard
                 key={index}
                 title={node?.title}
