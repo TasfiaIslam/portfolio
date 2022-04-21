@@ -29,7 +29,7 @@ export const ProfileWrapper = ({ children }: Props): JSX.Element => {
 export const AnimationDiv = ({ className }: AnimationProps): JSX.Element => {
   return (
     <div
-      className={`bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob ${className}`}
+      className={`hidden lg:block bg-transparent border-2 border-blue-500 rounded-full w-12 h-12 animate-blob ${className}`}
     ></div>
   );
 };

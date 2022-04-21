@@ -11,6 +11,7 @@ const textStyle = {
   h2: 'font-semibold',
   h3: 'font-medium',
   h4: 'font-medium',
+  h5: 'font-medium',
 };
 
 const textVariants: Variants = {
@@ -29,7 +30,7 @@ const textVariants: Variants = {
 
 export interface Props {
   children: ReactNode;
-  size?: 'h1' | 'h2' | 'h3' | 'h4';
+  size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   mode?: 'light' | 'dark';
   className?: string;
   color?: string;
@@ -85,6 +86,8 @@ function HeaderText({
       );
     case 'h4':
       return <h4 className={tailWindClass}>{children}</h4>;
+    case 'h5':
+      return <h5 className={tailWindClass}>{children}</h5>;
     default:
       return (
         <motion.h2

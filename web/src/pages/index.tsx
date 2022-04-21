@@ -1,16 +1,15 @@
 import * as React from 'react';
-import Seo from '@/components/seo';
-import Header from '@/components/_root/header';
-import Hero from '@/components/hero';
 import { graphql, PageProps } from 'gatsby';
+import Seo from '@/components/seo';
+import Layout from '@/components/_layout';
+import Hero from '@/components/hero';
 import Projects from '@/components/projects';
 import Divider from '@/components/_root/divider';
 import Experience from '@/components/experience';
 
 const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
-  <>
+  <Layout>
     <Seo title="Tasfia Islam" />
-    <Header />
     <Hero
       title={data?.sanityHero?.title}
       sub_header={data?.sanityHero?.sub_header}
@@ -22,7 +21,7 @@ const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
     <Experience experiences={data?.allSanityExperience?.edges} skills={data?.sanitySkills} />
     <Divider />
     <Projects projects={data?.allSanityProject?.edges} />
-  </>
+  </Layout>
 );
 
 export default IndexPage;

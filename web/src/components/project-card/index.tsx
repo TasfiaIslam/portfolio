@@ -34,15 +34,12 @@ const ProjectCard = ({
   createDate,
   slug,
 }: Props): JSX.Element => {
-  // {
-  //   console.log('SLUG', slug?.current);
-  // }
   return (
     <CardContainer>
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
         <Image
           src={image}
-          className="w-full h-48 py-5 relative z-10 opacity-75 group-hover:opacity-90 cursor-pointer"
+          className="max-w-full md:h-56 lg:h-48 py-5 relative z-10 opacity-90 group-hover:opacity-100 cursor-pointer"
           objectFit="cover"
         />
         <ProjectCard.Link gitLink={gitLink} webLink={webLink} />

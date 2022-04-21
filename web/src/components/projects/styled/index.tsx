@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const ProjectContainer = ({ children }: Props): JSX.Element => {
-  return <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">{children}</div>;
+  return <div className="grid md:grid-cols-3 gap-y-20 lg:gap-x-8">{children}</div>;
 };

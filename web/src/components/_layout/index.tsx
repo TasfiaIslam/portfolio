@@ -24,24 +24,16 @@ const Layout = ({ children }: any): JSX.Element => {
   return (
     <>
       <Header />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main className={'mt-[64px] overflow-hidden'}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, type: 'tween' }}
-          >
-            {children}
-          </motion.div>
-        </main>
-      </div>
+      <main className={'overflow-hidden'}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, type: 'tween' }}
+        >
+          {children}
+        </motion.div>
+      </main>
     </>
   );
 };

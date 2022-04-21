@@ -52,7 +52,7 @@ const Experience = ({ experiences, skills }: Props): JSX.Element => {
             <div className="lg:w-11/12 xl:w-9/12">
               <Swiper
                 autoplay={{
-                  delay: 2500,
+                  delay: 5000,
                   disableOnInteraction: false,
                 }}
                 pagination={{
@@ -80,15 +80,15 @@ const Experience = ({ experiences, skills }: Props): JSX.Element => {
 };
 
 Experience.Item = ({ index, node }: ItemProps): JSX.Element => {
+  const startDate = node?.start_date;
+  const endDate = node?.end_date ? node?.end_date : 'present';
   return (
     <ItemWrapper>
       <ItemHeaderWrapper>
-        <HeaderText size="h4" className="capitalize">
+        <HeaderText size="h5" className="capitalize">
           {index + 1}. {node?.designation}
         </HeaderText>
-        <p className="text-xs text-white">
-          {node?.start_date} - {node?.end_date ? node?.end_date : 'present'}
-        </p>
+        <p className="text-xs text-white">{startDate + ' - ' + endDate}</p>
       </ItemHeaderWrapper>
       <Company>{node?.company}</Company>
       <div className="pl-1 lg:pl-6 pt-2 flex flex-col gap-1">
