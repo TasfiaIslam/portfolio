@@ -22,10 +22,20 @@ export default {
       type: "string",
     },
     {
-      name: "description",
+      name: "about",
       title: "Description",
       description: "Description about myself",
-      type: "text",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [
+            {
+              type: "about",
+            },
+          ],
+        },
+      ],
     },
     {
       name: "profile_links",

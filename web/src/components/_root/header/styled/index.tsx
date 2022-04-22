@@ -31,7 +31,7 @@ export const LinkItem = ({ children, href }: LinkProps): JSX.Element => {
     <AnchorLink
       to={href ? href : '/'}
       className="border-b-2 border-transparent hover:border-b-2 hover:border-primary-blue cursor-pointer transition 
-      ease-out delay-100 hover:-translate-y-1 duration-300 hover:transition-all"
+      ease-out hover:-translate-y-1 duration-100 hover:transition-all"
     >
       {children}
     </AnchorLink>

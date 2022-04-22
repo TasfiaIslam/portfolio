@@ -14,7 +14,7 @@ const IndexPage = ({ data }: PageProps<any>): JSX.Element => (
       title={data?.sanityHero?.title}
       sub_header={data?.sanityHero?.sub_header}
       subtitle={data?.sanityHero?.subtitle}
-      description={data?.sanityHero?.description}
+      about={data?.sanityHero?.about}
       profile_links={data?.sanityHero?.profile_links}
     />
     <Divider />
@@ -32,7 +32,12 @@ export const query = graphql`
       title
       sub_header
       subtitle
-      description
+      about {
+        about_me
+        my_skills {
+          technology
+        }
+      }
       profile_links {
         profile_name
         profile_url

@@ -12,6 +12,7 @@ import contact from "./contact";
 import profile_links from "./profile_links";
 import skills from "./skills";
 import blockContent from "./block_content";
+import about from "./about";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -29,5 +30,6 @@ export default createSchema({
     profile_links,
     skills,
     blockContent,
+    about,
   ]),
 });

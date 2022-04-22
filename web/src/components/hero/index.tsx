@@ -13,7 +13,12 @@ interface Props {
   title: string;
   sub_header?: string;
   subtitle?: string;
-  description?: string;
+  about: {
+    about_me: string;
+    my_skills: {
+      technology: string;
+    }[];
+  }[];
   profile_links?: {
     profile_name?: string;
     profile_url?: string;
@@ -21,12 +26,13 @@ interface Props {
   }[];
 }
 
-const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props): JSX.Element => {
+const Hero = ({ title, sub_header, subtitle, about, profile_links }: Props): JSX.Element => {
+  console.log('DESCRIPTION 1', about && about[0]);
   return (
     <PageSection id="about">
       <Container>
         <div className="flex">
-          <div className="w-2/3">
+          <div className="w-full lg:w-2/3">
             <HeaderText size="h3" color="text-primary-blue">
               {sub_header}
             </HeaderText>
@@ -39,7 +45,7 @@ const Hero = ({ title, sub_header, subtitle, description, profile_links }: Props
               loop={Infinity}
               className="text-2xl text-text-dark-version font-semibold"
             />
-            <Description>{description}</Description>
+            <Description about={about} />
             <ProfileWrapper>
               <Button className="italic">Contact Me</Button>
               {profile_links?.map((profile, index) => (
