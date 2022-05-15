@@ -15,10 +15,10 @@ const gatsbyRequiredRules = path.join(
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Portfolio`,
+    description: `Personal Portfolio website built with Gatsby`,
+    author: `@tasfia-islam`,
+    siteUrl: `https://tasfia-islam.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-postcss`,

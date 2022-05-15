@@ -9,6 +9,22 @@ View live [Portfolio](https://tasfia-islam.netlify.app/)
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
+Start sanity server -
+
+`cd studio`
+
+Installation:
+
+`npm install`
+
+To Start Server:
+
+`sanity start`
+
+To Visit App:
+
+`localhost:3333`
+
 To view the FrontEnd,
 
 `cd web`
@@ -23,4 +39,4 @@ To Start Server:
 
 To Visit App:
 
-`localhost:3000`
+`localhost:8000`

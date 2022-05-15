@@ -59,7 +59,7 @@ const ProjectCard = ({
           {title}
         </HeaderText>
         <CardDescription shortDescription={shortDescription} />
-        <Link to={`project/${slug?.current}/`} className="w-full">
+        <Link to={`project/${slug?.current}/`} className="w-full" target="_blank">
           <button
             className="w-full text-start mt-4 py-2 text-sm font-semibold bg-primary text-white 
         group-hover:bg-secondary-blue group-hover:text-primary cursor-pointer transition duration-300 ease-out"

@@ -49,7 +49,7 @@ const Hero = ({ title, sub_header, subtitle, about, profile_links }: Props): JSX
             <ProfileWrapper>
               <Button className="italic">Contact Me</Button>
               {profile_links?.map((profile, index) => (
-                <Link key={index} to={profile?.profile_url || ''}>
+                <Link key={index} to={profile?.profile_url || ''} target="_blank">
                   <Image src={profile?.profile_icon} className="h-8 w-8" />
                 </Link>
               ))}
